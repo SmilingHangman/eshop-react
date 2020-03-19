@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 import Nav from './components/Nav'
 import { Container } from './components/shared/Container/Container'
@@ -20,7 +20,7 @@ function App() {
                 exact={route.isExact}
               />
             ))}
-            <Redirect from="*" to="/404" />
+            <Redirect from='*' to='/404' />
           </Switch>
         </main>
         <footer>Cia yra footeri</footer>

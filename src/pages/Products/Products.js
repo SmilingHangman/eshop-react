@@ -19,12 +19,12 @@ const Products = () => {
       dispatch({ type: 'UPLOAD_PRODUCTS', products })
     }
     fetchProducts()
-  }, [])
+  }, [dispatch])
 
   return (
     <>
       <Button onClick={toggleModalHandler}>Create product</Button>
-      <Flex wrap="wrap" justify="space-between">
+      <Flex wrap='wrap' justify='space-between'>
         {products.map(product => (
           <Product key={product.id} product={product} />
         ))}

@@ -57,7 +57,7 @@ export const Product = ({ product, isCartPage }) => {
       const { cartQuantity } = productInCart || {}
       setIsAddToCartDisabled(cartQuantity >= quantity)
     }
-  }, [cart, id, quantity])
+  }, [cart, id, quantity, isCartPage])
 
   return (
     <div className={classes.product}>
@@ -73,9 +73,9 @@ export const Product = ({ product, isCartPage }) => {
         Quantity: {isCartPage ? product.cartQuantity : quantity}
       </div>
       <div className={classes.buttonList}>
-        <Flex justify="center">
+        <Flex justify='center'>
           {isCartPage ? (
-            <Button type="danger" onClick={removeFromCartHandler}>
+            <Button type='danger' onClick={removeFromCartHandler}>
               Delete
             </Button>
           ) : (
@@ -83,7 +83,7 @@ export const Product = ({ product, isCartPage }) => {
               <Button onClick={addToCartHandler} disabled={isAddToCartDisabled}>
                 Add to cart
               </Button>
-              <Button type="secondary">Edit</Button>
+              <Button type='secondary'>Edit</Button>
             </>
           )}
         </Flex>
